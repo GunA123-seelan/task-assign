@@ -1,41 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { TextField } from '@mui/material'
 import { Button } from '@mui/material'
 import { TextareaAutosize } from '@material-ui/core';
 import './Taskassign.css'
-const getStorageItem=()=>{
-  const str=localStorage.getItem("Tasks");
-  if(str){
-    return JSON.parse(str);
-  }else{
-    return [];
-  }
-}
+
 const Taskassign = (props) => {
-  const [storage,setStorage]=useState(getStorageItem());
+
   const [data, setData] = useState({ taskName: '', details: '' });
   const [show, setShow] = useState(false);
 
   const { taskName, details } = data;
   const change = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-
   }
-  console.log(data)
+  // console.log(data)
   const assignTask = (e) => {
-    // e.preventDefault();
-    setStorage([...storage,data])
+    e.preventDefault();
     props.onAdd(data);
     setData({
       taskName: '',
       details: '',
-    })
+    });
   }
-
-  useEffect(()=>{
-    localStorage.setItem("Tasks",JSON.stringify(storage))
-  },[storage]);
-
   const showTextArea = () => {
     setShow(true);
   }
