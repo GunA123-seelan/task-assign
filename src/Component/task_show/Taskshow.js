@@ -1,15 +1,16 @@
 import React from 'react'
-
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import './Taskshow.css';
 const Taskshow = (props) => {
-  const deleteTask=()=>{
-    props.onDelete(props.id);
+  const deleteTasks=(e)=>{
+    props.onDelete(props.id)
   }
   return (
-    <div>
-      <center>
-        <h1>{props.taskName}</h1>
-        <h3>{props.comments} <button onClick={deleteTask}>X</button></h3>
-      </center>
+    <div className='container'>
+     <h2 className='showtaskName'>{props.taskName}</h2>
+     <h2 className='showDetails'>{props.details} 
+       </h2>
+      <HighlightOffIcon onClick={deleteTasks}></HighlightOffIcon>
     </div>
   )
 }

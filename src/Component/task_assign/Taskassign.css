@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+}
+.title{
+    color:#56D8A4;
+}
+.para{
+    color: rgb(61, 61, 61);
+    text-decoration: solid;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 70%;
+    font-weight: 800;
+    line-height: 25px;
+    background-color:rgb(209, 227, 221);
+    padding: 30px;
+    
+}
+.fields{
+    display:flex;
+    justify-content: center;
+}
+.task-assign{
+    width: 50% !important;
+    margin:20px;
+}
+.fields .submit-btn{
+    margin-top: 10px;
+    margin-left: 45%;
+    justify-content: flex-end;
+}
